@@ -17,7 +17,7 @@ class ListNode{
 	}
 }
 
-class WorkAtTech
+class LinkedList
 {
 	static ListNode head;
 	
@@ -197,21 +197,56 @@ class WorkAtTech
 	
 	public static void main (String[] args) throws java.lang.Exception
 	{ 
-		insertAtBeg(2);
-		insertAtEnd(4);
-		insertAtEnd(3);
-		insertAtBeg(5);
-		insertAtEnd(7);
-		insertAtMid(8);
-		display();
-		// DelAtEnd();
-		// DelAtBeg();
-		// DelAtMid();
-		// display();
-		// DelElement(7);
-		// display();
-		// reverseprint(head);
-	
-		
+        int choice ,value;
+        Scanner sc = new Scanner(System.in);
+        do{
+            System.out.println("1.Insert at Beginning");
+            System.out.println("2.Insert at Middle");
+            System.out.println("3.Insert at End");
+            System.out.println("4.Delete at Beginning");
+            System.out.println("5.Delete at Middle");
+            System.out.println("6.Delete at End");
+            System.out.println("7.Display");
+            System.out.println("8.Exit");
+            choice=sc.nextInt();
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter the value:");
+                    value=sc.nextInt();
+                    insertAtBeg(value);
+                    break;
+                case 2:
+                     System.out.println("Enter the value:");
+                     value=sc.nextInt();
+                     insertAtMid(value);
+                     break;
+                case 3:
+                     System.out.println("Enter the value:");
+                     value=sc.nextInt();
+                     insertAtEnd(value);
+                     break;
+                case 4:
+                    DelAtBeg();
+                    break;
+                case 5:
+                     DelAtMid();
+                     break;
+                case 6:
+                     DelAtEnd();
+                     break;
+                case 7:
+                     display();
+                     break;
+                case 8:
+                     System.out.println("Exiting Program");
+                     break;
+            
+                default:
+                    System.out.println("Invalid Choice");
+            }
+        }
+            while (choice!=0);
+            
+                sc.close();	
 	}
 }
